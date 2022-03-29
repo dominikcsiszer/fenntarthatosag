@@ -11,6 +11,23 @@
     <script src="assets/js/bootstrap.js"></script>
 </head>
 <body>
-    
+    <input type="submit" value="Küldés" onclick="teszt()">
+    <div id="ajax"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/jquery-3.1.0.min.js"></script>
+    <script src="assets/ajax/functions.js"></script>
 </body>
 </html>
