@@ -1,10 +1,13 @@
-# Fenntarthatóság témahét
+# Fenntarthatóság témahét - Weblap
 
-## Feladat
-- Kinézet tervezés
-- Landing page
-- Cikkek/blog
-- Képek oldal
-- Képek leírása és bemutatása, terv és képek róla
-- PHP/SQL dinamikusan olvassa be az adatokat
-- SQL tervezés
+### A weblap célja
+A weblap célja, hogy összefogja az Számalk-Szalézi Szakgomnázium s Technikum 2022-ben a Fentarthatósági témahétre készült cikkeit, feladatait, eseményeit. 
+
+### Oldalak
+ - ❌ Kezdőlap
+ - ✔ Cikkek
+ - ❌ Quiz
+ - ❌ Divatbemutató - képgaléria
+ - ❌ Ruha bemutató
+ - ❌ Játékok
+ 
