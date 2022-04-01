@@ -41,6 +41,26 @@ function GetTimezone() {
 	return setlocale (LC_ALL, "no_NO.utf8");
 }
 
+function GetSentences($body, $sentencesToDisplay = 3) {
+    $clear = preg_replace('/\s+/',' ',strip_tags($body));
+    $sentences = preg_split('/(\.|\?|\!)(\s)/',$clear);
+
+    if (count($sentences) <= $sentencesToDisplay)
+        return $clear;
+
+    $stopAt = 0;
+    foreach ($sentences as $i => $sentence) {
+        $stopAt += strlen($sentence);
+
+        if ($i >= $sentencesToDisplay - 1)
+            break;
+    }
+
+    $stopAt += ($sentencesToDisplay * 2);
+	
+    return trim(substr($clear, 0, $stopAt));
+}
+
 function teszt() {
     echo "Done!";
 }
