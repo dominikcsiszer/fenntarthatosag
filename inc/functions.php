@@ -6,7 +6,7 @@ function IssetPage() {
 
 function GetData($id, $state, $type, $where = 'id') {
 	global $conn;
-	$query = $conn->query("SELECT * FROM ".$type." WHERE ".$where." = '$uid'");	
+	$query = $conn->query("SELECT * FROM ".$type." WHERE ".$where." = '$id'");	
 	if($query->num_rows > 0)
 		while($row = $query->fetch_assoc())
 			return $row[$state];
@@ -36,7 +36,12 @@ function GDate($type) {
 	}
 }
 
+function GetTimezone() {
+	return date_default_timezone_set('Europe/Budapest');
+	return setlocale (LC_ALL, "no_NO.utf8");
+}
+
 function teszt() {
-    echo 'Megy!';
+    echo "Done!";
 }
 ?>
