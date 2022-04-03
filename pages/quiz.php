@@ -22,7 +22,8 @@
                 <div class="card">
                     <div class="card-header"><h1>Quiz</h1></div>
                     <div class="card-body">
-                        
+                        <div id="ajax"></div>
+                        <?php LoadQuiz(1); ?>
                     </div>
                 </div>
 

@@ -5,3 +5,30 @@ a {
 a:hover {
     color: #666;
 }
+
+.answer {
+    background-color: aliceblue;
+    border: 1px solid #84c5fe;
+    margin: 0 auto;
+    border-radius: 5px;
+    width: 50%;
+    font-size: 17px;
+    padding: 8px 15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.answer:hover {
+    background-color: #e1effc;
+}
+.question {
+    font-size: 24px;
+    font-weight: bold;   
+}
+.quizFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
