@@ -22,8 +22,21 @@
                 <div class="card">
                     <div class="card-header"><h1>Quiz</h1></div>
                     <div class="card-body">
-                        <div id="ajax"></div>
-                        <?php LoadQuiz(1); ?>
+                    <div class="question"></div>
+                    <div class="answer answerA" onclick="quizEllenorzes()">
+                        <div class="answerText" id="a1"></div>
+                    </div>
+                    <div class="answer answerB" onclick="quizEllenorzes()">
+                        <div class="answerText" id="a2"></div>
+                    </div>
+                    <div class="answer answerC" onclick="quizEllenorzes()">
+                        <div class="answerText" id="a3"></div>
+                    </div>
+
+                    <div class="quizFooter">
+                        <div class="quizStatus"></div>
+                        <input type="button" class="quizNext" value="Következő" onclick="nextQuiz()" disabled>
+                    </div>
                     </div>
                 </div>
 
@@ -33,5 +46,6 @@
 
     <script src="assets/js/jquery-3.1.0.min.js"></script>
     <script src="assets/ajax/functions.js"></script>
+    <script src="assets/js/quiz.js"></script>
 </body>
 </html>

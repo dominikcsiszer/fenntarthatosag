@@ -1,0 +1,30 @@
+{"elso": [
+    {
+        "kerdes":"A műanyagot milyen színű szelektív kukába gyűjtjük?",
+        "a1":"Citromsárga",
+        "a2":"Kék",
+        "a3":"Zöld",
+        "helyes":"Citromsárga"
+    },
+    { 
+        "kerdes":"A papírt milyen színű szelektív kukába gyűjtjük?",
+        "a1":"Szürke",
+        "a2":"Piros",
+        "a3":"Kék",
+        "helyes":"Kék"
+    },
+    { 
+        "kerdes":"Az üveget milyen színű szelektív kukába gyűjtjük?",
+        "a1":"Lila",
+        "a2":"Zöld",
+        "a3":"Citromsárga",
+        "helyes":"Zöld"
+    },
+    { 
+        "kerdes":"A fémet milyen színű szelektív kukába gyűjtjük?",
+        "a1":"Szürke",
+        "a2":"Narancssárga",
+        "a3":"Kék",
+        "helyes":"Szürke"
+    }
+]}
