@@ -4,6 +4,8 @@ a2 = document.querySelector("#a2"),
 a3 = document.querySelector("#a3"),
 quizStatus = document.querySelector(".quizStatus"),
 nextBtn = document.querySelector(".quizNext"),
+quizChoose = document.querySelector(".quizChoose"),
+quiz = document.querySelector(".quiz"),
 answers = document.querySelectorAll(".answer")
 
 let file = "quiz/quiz.json", currQuiz = 0, helyes, osszKerdes
@@ -13,7 +15,6 @@ function fetchData(file) {
 }
 fetch(file).then(x => x.json()).then(data => quizAdatok(data))
 
-// TODO: Ne lehessen kattintani ha már kattintottunk a válaszra
 function quizAdatok(info) {
     question.innerText = info.elso[currQuiz].kerdes
     a1.innerText = info.elso[currQuiz].a1
@@ -24,11 +25,9 @@ function quizAdatok(info) {
     quizStatus.innerText = `${currQuiz+1}/${osszKerdes} kérdés`
 }
 
-let play = true
 function quizEllenorzes() {
-    if (play) {
-        for (const btn of answers) {
-            let answerText = btn.querySelector(".answerText")
+    for (const btn of answers) {
+        let answerText = btn.querySelector(".answerText")
             btn.addEventListener("click", () => {
                 if(answerText.innerText == helyes) {
                     btn.classList.add("success")
@@ -37,12 +36,9 @@ function quizEllenorzes() {
                 else {
                     btn.classList.add("error")
                     nextBtn.removeAttribute("disabled")
-                    
                 }
             })
         }
-    }
-    play = false
 }
 
 function nextQuiz(){
@@ -58,4 +54,9 @@ function nextQuiz(){
     } else {
         window.location.reload()
     }
+}
+
+function startQuiz() {
+    quizChoose.style.display = "none"
+    quiz.style.display = "block"
 }

@@ -42,3 +42,31 @@ a:hover {
     justify-content: space-between;
     align-items: center;
 }
+
+.quizCategory {
+    background-image: url(../img/blog/elso.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 150px;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+.quizCategory:hover {
+    transform: scale(1.02);
+}
+.quizCategory p {
+    width: 100%;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .5);
+    color: #fff;
+    font-weight: 500;
+    font-size: 24px;
+}
+.quiz {
+    display: none;
+}
