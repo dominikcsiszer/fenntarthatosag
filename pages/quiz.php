@@ -14,57 +14,59 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header"><h1>Kvíz</h1></div>
-                    <div class="card-body">
-                        <div class="quizChoose">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                                    <div class="quizCategory" onclick="startQuiz()">
-                                        <p>Általános Iskolásoknak Kvíz</p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                                    <div class="quizCategory">
-                                        <p>Középiskolásoknak Kvíz</p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                                    <div class="quizCategory">
-                                        <p>Fiatal Felnőtteknek Kvíz</p>
-                                    </div>
-                                </div>
+                        <div class="start">
+                            <div class="startBtn"><button>Általánis iskoláloskan kvíz</button></div>
+                            <div class="startBtn"><button>Középiskolásoknak kvíz</button></div>
+                            <div class="startBtn"><button>Fiatal felnőtteknek kvíz</button></div>
+                        </div>
+                        <!-- Info Box -->
+                        <div class="infoBox">
+                            <div class="info-title"><span>Néhány információ a kvízről</span></div>
+                            <div class="info-list">
+                                <div class="info">1. .</div>
+                                <div class="info">2. .</div>
+                                <div class="info">3. .</div>
+                                <div class="info">4. .</div>
+                                <div class="info">5. .</div>
+                            </div>
+                            <div class="buttons">
+                                <button class="quit">Kilépés</button>
+                                <button class="restart">Folytatás</button>
                             </div>
                         </div>
-
-                        <div class="quiz">
-                            <div class="question"></div>
-                            <div class="answer answerA" onclick="quizEllenorzes()">
-                                <div class="answerText" id="a1"></div>
+                        <div class="quizBox">
+                            <header>
+                                <div class="title"></div>
+                            </header>
+                            <section>
+                                <div class="que_text">
+                                </div>
+                                <div class="optionList">
+                                </div>
+                            </section>
+                            <footer>
+                                <div class="total_que">
+                                </div>
+                                <button class="next_btn">Következő</button>
+                            </footer>
+                        </div>
+                        <div class="resultBox">
+                            <div class="icon">
+                                <i class="fas fa-crown"></i>
                             </div>
-                            <div class="answer answerB" onclick="quizEllenorzes()">
-                                <div class="answerText" id="a2"></div>
+                            <div class="complete_text">Sikeresen teljesítetted a kvízt!</div>
+                            <div class="score_text">
                             </div>
-                            <div class="answer answerC" onclick="quizEllenorzes()">
-                                <div class="answerText" id="a3"></div>
-                            </div>
-        
-                            <div class="quizFooter">
-                                <div class="quizStatus"></div>
-                                <input type="button" class="quizNext" value="Következő" onclick="nextQuiz()" disabled>
+                            <div class="buttons">
+                                <button class="restart">Újrakezdés</button>
+                                <button class="quit">Kilépés</button>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
 
     <script src="assets/js/jquery-3.1.0.min.js"></script>
     <script src="assets/ajax/functions.js"></script>
