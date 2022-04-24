@@ -1,9 +1,9 @@
 a {
-    color: #333;
+    color: rgb(112, 130, 207);
     text-decoration: none;
 }
 a:hover {
-    color: #666;
+    color: rgb(89, 104, 172);
 }
 
 /* QUIZ */
@@ -347,4 +347,16 @@ footer button.show{
 .buttons button.quit:hover{
     color: #fff;
     background: #626f62;
+}
+
+/* CIKKEK */
+.cikkek img {
+    max-width: 100%;
+}
+
+.blog a {
+    color: #333;
+}
+.blog a:hover {
+    color: #555;
 }

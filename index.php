@@ -14,6 +14,7 @@ switch($_GET['page']) {
 	case 'ajax': include("assets/ajax/ajax.php"); break;
 	case 'home': include("pages/home.php"); break;
 	case 'cikkek': include("pages/cikkek.php"); break;
+	case 'ruhak': include("pages/ruhak.php"); break;
 	case 'quiz': include("pages/quiz.php"); break;
 	default: include("pages/home.php"); break;
 }

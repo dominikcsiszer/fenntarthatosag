@@ -38,10 +38,10 @@ function GDate($type) {
 
 function GetTimezone() {
 	return date_default_timezone_set('Europe/Budapest');
-	return setlocale (LC_ALL, "no_NO.utf8");
+	return setlocale(LC_ALL, 'hu_HU.ISO8859-2');
 }
 
-function GetSentences($body, $sentencesToDisplay = 3) {
+function GetSentences($body, $sentencesToDisplay = 2) {
     $clear = preg_replace('/\s+/',' ',strip_tags($body));
     $sentences = preg_split('/(\.|\?|\!)(\s)/',$clear);
 
@@ -61,32 +61,20 @@ function GetSentences($body, $sentencesToDisplay = 3) {
     return trim(substr($clear, 0, $stopAt));
 }
 
-function LoadQuiz($quizId, $status = 0) {
-    global $conn;
-	$query = $conn->query("SELECT * FROM quizquestions WHERE quizID = '$quizId'");	
-	if($query->num_rows > 0)
-		while($row = $query->fetch_assoc())
-			echo '<div class="question">'. $row["question"] .'</div>
-			<div class="answer answerA">
-				<div class="answerText" id="a1" value="'. $row["a1"] .'">'. $row["a1"] .'</div>
-			</div>
-			<div class="answer answerB">
-				<div class="answerText" id="a2" value="'. $row["a2"] .'">'. $row["a2"] .'</div>
-			</div>
-			<div class="answer answerC">
-				<div class="answerText" id="a3" value="'. $row["a3"] .'">'. $row["a3"] .'</div>
-			</div>
-			<div class="answer answerD">
-				<div class="answerText" id="a4" value="'. $row["a4"] .'">'. $row["a4"] .'</div>
-			</div>
+function createSlug($slug) {
 
-			<div class="quizFooter">
-				<div class="quizStatus">1/5 kérdés</div>
-				<div class="quizNext"><input type="button" value="Következő" onclick="nextQuiz()"></div>
-			</div>';
-}
+    $lettersNumbersSpacesHypens = '/[^\-\s\pN\pL]+/u';
+    $spacesDuplicateHypens = '/[\-\s]+/';
 
-function nextQuiz() {
-	echo $_POST['a1'];
+	$pattern = array("'é'", "'è'", "'ë'", "'ê'", "'É'", "'È'", "'Ë'", "'Ê'", "'á'", "'à'", "'ä'", "'â'", "'å'", "'Á'", "'À'", "'Ä'", "'Â'", "'Å'", "'ó'", "'ò'", "'ö'", "'ő'", "'ô'", "'Ó'", "'Ò'", "'Ö'", "'Ő'", "'Ô'", "'í'", "'ì'", "'ï'", "'î'", "'Í'", "'Ì'", "'Ï'", "'Î'", "'ú'", "'ù'", "'ü'", "'ű'", "'û'", "'Ú'", "'Ù'", "'Ü'", "'Ű'", "'Û'", "'ý'", "'ÿ'", "'Ý'", "'ø'", "'Ø'", "'œ'", "'Œ'", "'Æ'", "'ç'", "'Ç'");
+
+	$replace = array('e', 'e', 'e', 'e', 'E', 'E', 'E', 'E', 'a', 'a', 'a', 'a', 'a', 'A', 'A', 'A', 'A', 'A', 'o', 'o', 'o', 'o', 'O', 'O', 'O', 'O', 'i', 'i', 'i', 'I', 'I', 'I', 'I', 'I', 'u', 'u', 'u', 'u', 'u', 'U', 'U', 'U', 'U', 'U', 'y', 'y', 'Y', 'o', 'O', 'a', 'A', 'A', 'c', 'C'); 	
+
+    $slug = preg_replace($lettersNumbersSpacesHypens, '', mb_strtolower($slug, 'UTF-8'));
+    $slug = preg_replace($spacesDuplicateHypens, '-', $slug);
+    $slug = preg_replace($pattern, $replace, $slug);
+    $slug = trim($slug, '-');
+
+    return $slug;
 }
 ?>
