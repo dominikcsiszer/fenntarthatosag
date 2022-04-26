@@ -30,7 +30,7 @@
                         <img src="assets/img/blog/<?php echo GetData($_GET['cikk'], "titleIMG", "blog") ?>" alt="Első" style="max-width: 100%;">
                     <?php endif; ?>
                     <hr>
-                    <p><?php echo GetData($_GET['cikk'], "body", "blog"); ?></p>
+                    <?php echo GetData($_GET['cikk'], "body", "blog"); ?>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <h3><?php echo GetData($_GET['cikk'], "category", "blog") ." Kategóriából" ?></h3>

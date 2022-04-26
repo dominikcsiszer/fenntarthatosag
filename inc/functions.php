@@ -60,33 +60,4 @@ function GetSentences($body, $sentencesToDisplay = 3) {
 	
     return trim(substr($clear, 0, $stopAt));
 }
-
-function LoadQuiz($quizId, $status = 0) {
-    global $conn;
-	$query = $conn->query("SELECT * FROM quizquestions WHERE quizID = '$quizId'");	
-	if($query->num_rows > 0)
-		while($row = $query->fetch_assoc())
-			echo '<div class="question">'. $row["question"] .'</div>
-			<div class="answer answerA">
-				<div class="answerText" id="a1" value="'. $row["a1"] .'">'. $row["a1"] .'</div>
-			</div>
-			<div class="answer answerB">
-				<div class="answerText" id="a2" value="'. $row["a2"] .'">'. $row["a2"] .'</div>
-			</div>
-			<div class="answer answerC">
-				<div class="answerText" id="a3" value="'. $row["a3"] .'">'. $row["a3"] .'</div>
-			</div>
-			<div class="answer answerD">
-				<div class="answerText" id="a4" value="'. $row["a4"] .'">'. $row["a4"] .'</div>
-			</div>
-
-			<div class="quizFooter">
-				<div class="quizStatus">1/5 kérdés</div>
-				<div class="quizNext"><input type="button" value="Következő" onclick="nextQuiz()"></div>
-			</div>';
-}
-
-function nextQuiz() {
-	echo $_POST['a1'];
-}
 ?>
