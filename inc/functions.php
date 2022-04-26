@@ -38,10 +38,10 @@ function GDate($type) {
 
 function GetTimezone() {
 	return date_default_timezone_set('Europe/Budapest');
-	return setlocale (LC_ALL, "no_NO.utf8");
+	return setlocale(LC_ALL, 'hu_HU.ISO8859-2');
 }
 
-function GetSentences($body, $sentencesToDisplay = 3) {
+function GetSentences($body, $sentencesToDisplay = 2) {
     $clear = preg_replace('/\s+/',' ',strip_tags($body));
     $sentences = preg_split('/(\.|\?|\!)(\s)/',$clear);
 
@@ -59,5 +59,22 @@ function GetSentences($body, $sentencesToDisplay = 3) {
     $stopAt += ($sentencesToDisplay * 2);
 	
     return trim(substr($clear, 0, $stopAt));
+}
+
+function createSlug($slug) {
+
+    $lettersNumbersSpacesHypens = '/[^\-\s\pN\pL]+/u';
+    $spacesDuplicateHypens = '/[\-\s]+/';
+
+	$pattern = array("'é'", "'è'", "'ë'", "'ê'", "'É'", "'È'", "'Ë'", "'Ê'", "'á'", "'à'", "'ä'", "'â'", "'å'", "'Á'", "'À'", "'Ä'", "'Â'", "'Å'", "'ó'", "'ò'", "'ö'", "'ő'", "'ô'", "'Ó'", "'Ò'", "'Ö'", "'Ő'", "'Ô'", "'í'", "'ì'", "'ï'", "'î'", "'Í'", "'Ì'", "'Ï'", "'Î'", "'ú'", "'ù'", "'ü'", "'ű'", "'û'", "'Ú'", "'Ù'", "'Ü'", "'Ű'", "'Û'", "'ý'", "'ÿ'", "'Ý'", "'ø'", "'Ø'", "'œ'", "'Œ'", "'Æ'", "'ç'", "'Ç'");
+
+	$replace = array('e', 'e', 'e', 'e', 'E', 'E', 'E', 'E', 'a', 'a', 'a', 'a', 'a', 'A', 'A', 'A', 'A', 'A', 'o', 'o', 'o', 'o', 'O', 'O', 'O', 'O', 'i', 'i', 'i', 'I', 'I', 'I', 'I', 'I', 'u', 'u', 'u', 'u', 'u', 'U', 'U', 'U', 'U', 'U', 'y', 'y', 'Y', 'o', 'O', 'a', 'A', 'A', 'c', 'C'); 	
+
+    $slug = preg_replace($lettersNumbersSpacesHypens, '', mb_strtolower($slug, 'UTF-8'));
+    $slug = preg_replace($spacesDuplicateHypens, '-', $slug);
+    $slug = preg_replace($pattern, $replace, $slug);
+    $slug = trim($slug, '-');
+
+    return $slug;
 }
 ?>

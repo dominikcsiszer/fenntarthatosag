@@ -1,9 +1,15 @@
+body {
+    font-family: Karla, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Oxygen, Cantarell, sans-serif !important;
+}
+
 a {
-    color: #333;
+    color: rgb(0, 0, 0);
     text-decoration: none;
 }
-a:hover {
-    color: #666;
+
+.container {
+    max-width: 90% !important;
+    margin: 0 auto;
 }
 
 /* QUIZ */
@@ -347,4 +353,16 @@ footer button.show{
 .buttons button.quit:hover{
     color: #fff;
     background: #626f62;
+}
+
+/* CIKKEK */
+.cikkek img {
+    max-width: 100%;
+}
+
+.blog a {
+    color: #333;
+}
+.blog a:hover {
+    color: #555;
 }
