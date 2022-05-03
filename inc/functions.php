@@ -1,7 +1,7 @@
 <?php 
 function IssetPage() {
 	if(!isset($_GET['page']))
-		header("Location:?page=home");
+		header("Location:home");
 }
 
 function GetData($id, $state, $type, $where = 'id') {
