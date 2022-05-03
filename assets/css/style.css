@@ -8,8 +8,10 @@ a {
 }
 
 .container {
-    max-width: 90% !important;
-    margin: 0 auto;
+    margin: 0px auto;
+    max-width: 1260px;
+    width: 100%;
+    flex: 1 1 0%;
 }
 
 /* QUIZ */
