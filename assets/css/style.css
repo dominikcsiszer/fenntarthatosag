@@ -38,6 +38,14 @@ a {
     box-shadow: 8px 5px 10px rgba(0,0,0,.2);
 }
 
+.nav .logo {
+    transition: all .3s ease;
+    font-size: 2rem;
+}
+.nav-active .logo {
+    font-size: 1.5rem;
+}
+
 .nav-menu {
     padding: 0;
     display: flex;

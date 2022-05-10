@@ -1,8 +1,5 @@
 const start = document.querySelector(".start"),
 start_btn = document.querySelectorAll(".startBtn button"),
-info_box = document.querySelector(".infoBox"),
-exit_btn = info_box.querySelector(".buttons .quit"),
-continue_btn = info_box.querySelector(".buttons .restart"),
 quiz_box = document.querySelector(".quizBox"),
 quiz_title = quiz_box.querySelector(".title"),
 result_box = document.querySelector(".resultBox"),
@@ -12,31 +9,23 @@ var currQuiz
 
 // TODO: Azok a kérdések jöjjenek elő amelyk gombra nyomott
 start_btn[0].onclick = ()=>{
-    info_box.classList.add("activeInfo")
     start.classList.add("activeStart")
+    quiz_box.classList.add("activeQuiz")
     currQuiz = data.elso
+    showQuetions(0)
+    queCounter(1) 
 }
 start_btn[1].onclick = ()=>{
-    info_box.classList.add("activeInfo")
     start.classList.add("activeStart")
+    quiz_box.classList.add("activeQuiz")
     currQuiz = data.masodik
+    showQuetions(0)
+    queCounter(1) 
 }
 start_btn[2].onclick = ()=>{
-    info_box.classList.add("activeInfo")
     start.classList.add("activeStart")
-    currQuiz = data.harmadik
-}
-
-
-exit_btn.onclick = ()=>{
-    info_box.classList.remove("activeInfo")
-    start.classList.remove("activeStart")
-}
-
-
-continue_btn.onclick = ()=>{
-    info_box.classList.remove("activeInfo")
     quiz_box.classList.add("activeQuiz")
+    currQuiz = data.harmadik
     showQuetions(0)
     queCounter(1) 
 }
@@ -82,7 +71,7 @@ next_btn.onclick = ()=>{
     }
 }
 
-const file = "quiz/quiz.json"
+const file = "assets/json/quiz.json"
 var data = ""
 function fetchData(file, que_count) {
     fetch(file).then(x => x.json()).then(d => data = d)
@@ -148,7 +137,6 @@ function optionSelected(answer, index){
 
 // TODO: SQL-be mentse az eddigi adott válaszokat és átlag alapján értékeljen is
 function showResult(){
-    info_box.classList.remove("activeInfo")
     quiz_box.classList.remove("activeQuiz")
     result_box.classList.add("activeResult")
     const scoreText = result_box.querySelector(".score_text")

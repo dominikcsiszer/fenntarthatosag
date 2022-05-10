@@ -96,6 +96,7 @@
                     <?php endwhile; ?>
                     <?php endif; ?>
                 </div>
+                <div class="cikkekLista">
                     <?php
                     $query = $conn->query("SELECT * FROM blog WHERE id != 1 ORDER BY date DESC");
                     if ($query->num_rows > 0) :
@@ -116,7 +117,8 @@
                     </div>
                     <?php endwhile; ?>
                     <?php endif; ?>
-                    <?php endif; ?>
+                    <?php endif; ?>            
+                </div>
             </div>
 
     <script src="assets/js/jquery-3.1.0.min.js"></script>

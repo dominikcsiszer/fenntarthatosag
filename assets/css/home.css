@@ -37,7 +37,8 @@
     max-width: 500px;
 }
 .header-about .header-aboutBottom {
-    width: 800px;
+    width: 100%;
+    max-width: 800px;
 }
 
 /* CIKKEK */
@@ -130,7 +131,8 @@
         max-width: 600px;
     }
     .header-about .header-aboutBottom {
-        width: 800px;
+        width: 100%;
+        max-width: 800px;
     }
 
     .kepek-sor {

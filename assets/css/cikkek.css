@@ -6,7 +6,7 @@
     padding-bottom: 48px;
 }
 .cikk {
-    grid-area: article / article / article / article;
+    grid-area: article;
     width: 100%;
     display: inline-grid;
     grid-template-columns: 45% 55%;
@@ -140,4 +140,38 @@
 .cikkekDetails {
     margin: 0;
     text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .cikkek-uj {
+        display: block ;
+        height: auto;
+    }
+    .cikkek-list {
+        display: inline-block;
+    }
+    .cikk {
+        display: block;
+        position: relative;
+    }
+    .cikk::after {
+        content: "";
+        margin-top: 12px;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #d9e4b7;
+    }
+    .cikk-bevezeto {
+        display: block;
+    }
+    .cikk-bevezeto h2 {
+        font-size: 2.5rem;
+    }
+    .cikk-title {
+        font-size: 20px;
+    }
+    .cikkek h1 {
+        font-size: 2.5rem;
+    }
 }

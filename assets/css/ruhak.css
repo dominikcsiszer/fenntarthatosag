@@ -1,0 +1,16 @@
+.kollekciokPanel {
+    display: block;
+}
+.activeKollekcio {
+    display: none;
+}
+
+.ruhakPanel {
+    display: none;
+}
+.activeRuhak {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}

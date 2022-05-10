@@ -25,21 +25,7 @@
                             <div class="startBtn"><button>Középiskolásoknak kvíz</button></div>
                             <div class="startBtn"><button>Fiatal felnőtteknek kvíz</button></div>
                         </div>
-                        <!-- Info Box -->
-                        <div class="infoBox">
-                            <div class="info-title"><span>Néhány információ a kvízről</span></div>
-                            <div class="info-list">
-                                <div class="info">1. .</div>
-                                <div class="info">2. .</div>
-                                <div class="info">3. .</div>
-                                <div class="info">4. .</div>
-                                <div class="info">5. .</div>
-                            </div>
-                            <div class="buttons">
-                                <button class="quit">Kilépés</button>
-                                <button class="restart">Folytatás</button>
-                            </div>
-                        </div>
+                       
                         <div class="quizBox">
                             <header>
                                 <div class="title"></div>
