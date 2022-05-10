@@ -22,11 +22,11 @@
         <div class="kollekciokPanel">
             <div class="zero-waste">
                 <h1>Zero Waste Kollekció</h1>
-                <div class="startBtn"><button>Tovább</button></div>
+                <div class="startBtn"><button id="zero">Tovább</button></div>
             </div>
             <div class="kreativ-kiserletek">
                 <h1>Kreatív Kisérletek Kollekció</h1>
-                <div class="startBtn"><button>Tovább</button></div>
+                <div class="startBtn"><button id="kreativ">Tovább</button></div>
             </div>
         </div>
         <div class="ruhakPanel">
