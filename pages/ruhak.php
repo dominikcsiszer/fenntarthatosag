@@ -54,6 +54,7 @@
 
     <script src="assets/js/jquery-3.1.0.min.js"></script>
     <script src="assets/ajax/functions.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>

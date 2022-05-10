@@ -5,8 +5,8 @@ body {
 }
 
 a {
-    color: rgb(0, 0, 0);
-    text-decoration: none;
+    color: #312e3d;
+    text-decoration: underline;
 }
 
 .container {
@@ -28,7 +28,14 @@ a {
     justify-content: space-around;
     align-items: center;
     position: fixed;
+    /*background-color: #fff;*/
+    color: #46444e;
+    transition: all .3s ease;
+}
+
+.nav-active {
     background-color: #fff;
+    box-shadow: 8px 5px 10px rgba(0,0,0,.2);
 }
 
 .nav-menu {
@@ -38,8 +45,16 @@ a {
     list-style: none;
 }
 
+.nav-link {
+    text-decoration: none;
+}
+.nav-item:hover {
+    font-weight: 500;
+}
+
 .nav-item {
     padding: 1.5rem;
+    cursor: pointer;
 }
 
 /* CIKKEK */
@@ -52,4 +67,17 @@ a {
 }
 .blog a:hover {
     color: #555;
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        max-width: 768px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 80%;
+    }
 }

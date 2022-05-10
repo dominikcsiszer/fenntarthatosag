@@ -64,7 +64,7 @@
 
                 <div class="cikk-bevezeto">
                     <?php
-                        $query = $conn->query("SELECT * FROM blog WHERE id = 1");
+                        $query = $conn->query("SELECT * FROM blog ORDER BY date DESC LIMIT 1");
                         if ($query->num_rows > 0) :
                             $row = $query->fetch_assoc()
                         ?>
@@ -121,6 +121,11 @@
 
     <script src="assets/js/jquery-3.1.0.min.js"></script>
     <script src="assets/ajax/functions.js"></script>
+    <?php if (isset($get)) : ?>
+        <script src="../assets/js/script.js"></script>
+    <?php else : ?>
+        <script src="assets/js/script.js"></script>
+    <?php endif; ?>
 </body>
 
 </html>
