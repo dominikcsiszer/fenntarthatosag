@@ -4,6 +4,7 @@ RewriteRule ^cikkek ?page=cikkek
 RewriteRule ^ruhak ?page=ruhak
 RewriteRule ^kviz ?page=quiz
 RewriteRule ^home ?page=home
+RewriteRule ^galeria ?page=galeria
 
 RewriteRule ^/([0-9a-zA-Z_-]+) ?page=cikkek&cikk=$1 [NC,L]
 RewriteRule ^/([0-9a-zA-Z_-]+) ?page=ruhak&ruha=$1 [L]

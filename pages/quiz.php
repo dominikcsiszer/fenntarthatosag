@@ -6,12 +6,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title><?php echo $name ?></title>
-    
-    
-    <!-- Boostrap -->
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <script src="assets/js/bootstrap.js"></script>
-
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/quiz.css">
@@ -20,6 +14,7 @@
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+<?php require_once("inc/nav.php"); ?>
                         <div class="start">
                             <div class="startBtn"><button>Általánis iskoláloskan kvíz</button></div>
                             <div class="startBtn"><button>Középiskolásoknak kvíz</button></div>

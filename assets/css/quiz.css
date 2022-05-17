@@ -1,11 +1,17 @@
 /* QUIZ */
 .start {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 2rem;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+.startBtn {
+    width: 100%;
 }
 .start.activeStart {
     opacity: 0;
@@ -30,24 +36,21 @@
     transform: translate(-50%, -50%) scale(1);
 }
 .startBtn button{
-    font-size: 25px;
-    font-weight: 500;
-    color: #fff;
-    padding: 15px 30px;
-    outline: none;
-    border: none;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
-                0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url(../img/blog/elso.jpg);
-    background-position: center;
-    background-size: cover;
-    text-align: center;
+    width: 100%;
+    background: aliceblue;
+    border: 1px solid #84c5fe;
     border-radius: 5px;
+    padding: 15px 24px;
+    font-size: 17px;
+    font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-align: center;
 }
 .startBtn button:hover {
-    transform: scale(1.1);
+    color: #004085;
+    background: #cce5ff;
+    border: 1px solid #b8daff;
 }
 .infoBox{
     width: 500px;
@@ -240,6 +243,7 @@ footer{
 }
 footer .total_que span{
     display: flex;
+    align-items: center;
     user-select: none;
 }
 footer .total_que span p{
@@ -300,6 +304,7 @@ footer button.show{
 }
 .resultBox .score_text span{
     display: flex;
+    align-items: center;
     margin: 10px 0;
     font-size: 18px;
     font-weight: 500;

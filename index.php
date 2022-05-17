@@ -16,6 +16,7 @@ switch($_GET['page']) {
 	case 'cikkek': include("pages/cikkek.php"); break;
 	case 'ruhak': include("pages/ruhak.php"); break;
 	case 'quiz': include("pages/quiz.php"); break;
+	case 'galeria': include("pages/galeria.php"); break;
 	default: include("pages/home.php"); break;
 }
 

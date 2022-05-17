@@ -9,6 +9,9 @@
     <!-- Custom -->
     <link rel="stylesheet" href="assets/css/home.css">
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- BOXICONS -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <?php require_once("inc/nav.php"); ?>
@@ -42,7 +45,7 @@
                     while ($row = $query->fetch_assoc()) :
                 ?>
                     <div class="cikk">
-                        <div class="cikk-img"><img src="assets/img/blog/bevezetés/kep3.jpg" alt="Cikk img"></div>
+                        <div class="cikk-img"><img src="assets/img/blog/<?php echo $row['slug'] ?>/<?php echo $row['titleIMG'] ?>" alt="Kép" style="max-width: 100%;"></div>
                         <div class="cikk-category"><?php echo $row['category']; ?></div>
                         <a href="cikkek/<?php echo createSlug($row['title']); ?>"><div class="cikk-title"><?php echo $row['title']; ?></div></a>
                         <div class="cikk-details">

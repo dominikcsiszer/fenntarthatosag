@@ -30,6 +30,9 @@
     <?php else : ?>
         <link rel="stylesheet" href="assets/css/style.css">
     <?php endif; ?>
+
+    <!-- BOXICONS -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -81,13 +84,13 @@
                 </div>
                 <div class="cikkek-uj">
                     <?php
-                    $query = $conn->query("SELECT * FROM blog ORDER BY date DESC LIMIT 3");
+                    $query = $conn->query("SELECT * FROM blog ORDER BY date DESC LIMIT 3 OFFSET 1");
                     if ($query->num_rows > 0) :
                         while ($row = $query->fetch_assoc()) :
                     ?>
                         <div class="cikk-uj">
-                            <img src="assets/img/blog/bevezetés/kep3.jpg" alt="Kép" style="max-width: 100%;">
-                            <!--<img src="assets/img/blog/<?php echo $row['slug'] ?>/<?php echo $row['titleIMG'] ?>" alt="Kép" style="max-width: 100%;">-->
+                            <!--<img src="assets/img/blog/bevezetés/kep3.jpg" alt="Kép" style="max-width: 100%;">-->
+                            <img src="assets/img/blog/<?php echo $row['slug'] ?>/<?php echo $row['titleIMG'] ?>" alt="Kép" style="max-width: 100%;">
                             <p class="cikk-category"><?php echo $row['category']; ?></p>
                             <a href="cikkek/<?php echo createSlug($row['title']); ?>" class="cikk-title"><?php echo $row['title']; ?></a>
                             <p><?php echo $row['author']; ?></p>

@@ -65,6 +65,14 @@ a {
     cursor: pointer;
 }
 
+.toggleBtn {
+    display: none;
+    outline: none;
+    border: none;
+    background-color: inherit;
+    font-size: 2rem;
+}
+
 /* CIKKEK */
 .cikkek img {
     max-width: 100%;
@@ -87,5 +95,47 @@ a {
 @media screen and (max-width: 768px) {
     .container {
         max-width: 80%;
+    }
+    .nav .logo {
+        font-size: 1.2rem;
+    }
+    .nav-active .logo {
+        font-size: 1rem;
+    }
+    .nav-right {
+        width: 60%;
+        font-size: .9rem;
+    }
+    .nav-right {
+        position: absolute;
+        width: 100%;
+    }
+    .nav-menu {
+        z-index: 99;
+        top: -500px;
+        display: block;
+        position: absolute;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 8px 5px 10px rgba(0,0,0,.2);
+        transition: all .2s ease;
+    }
+    .nav-menu-active {
+        top: 20px;
+    }
+    .nav-item {
+        padding: 0;
+    }
+    .nav-item a {
+        padding: 1.5rem;
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+    .nav-item a:hover {
+        background-color: rgb(219, 219, 219);
+    }
+    .toggleBtn {
+        display: block;
     }
 }

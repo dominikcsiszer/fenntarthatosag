@@ -1,5 +1,6 @@
 .kollekciokPanel {
-    display: block;
+    display: flex;
+    flex-direction: column;
 }
 .activeKollekcio {
     display: none;
@@ -14,4 +15,84 @@
     align-items: center;
     flex-wrap: wrap;
     gap: .5rem;
+}
+.startBtn button {
+    color: #fff;
+    background-color: #97a072;
+    padding: 15px 25px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all .2s ease;
+}
+
+.startBtn button:hover {
+    background-color: #a4ad7d;
+}
+
+.backBtn button {
+    color: #fff;
+    background-color: #535353;
+    padding: 15px 25px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all .2s ease;
+}
+.backBtn { display: none; }
+.activeBtn { display: block; }
+
+/* RUHÁK */
+.kollekcio:nth-child(2) {
+    flex-direction: row-reverse;
+}
+.kollekcio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.kollekcio-img img{
+    width: 300px;
+}
+.kollekcio-details {
+    color: #312e3d;
+}
+.kollekcio-details ol {
+    list-style-type: lower-alpha;
+}
+
+/* RUHA */
+.ruhaPanel {
+    display: none;
+}
+.activeRuha {
+    display: block;
+}
+.ruhaKepek {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+    .cikkek-osszes {
+        width: 80%;
+        margin: 0 auto;
+        display: block;
+    }
+    .cikk {
+        margin-bottom: 30px;
+    }
+
+    .kollekcio,
+    .kollekcio:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+    }
 }
