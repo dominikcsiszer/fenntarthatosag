@@ -43,20 +43,20 @@
             //TODO: Képek beszúrása és átnézni, hogy minden rendesen fent van-e az adatbázisban.
             if (isset($get)) : ?>
                 <div class="cikkek">
-                    <p class="cikk-category"><?php echo GetData($get, "category", "blog", "slug"); ?></p>
-                    <h1><?php echo GetData($get, "title", "blog", "slug") ?></h1>
-                    <?php if (GetData($get, "titleIMG", "blog", "slug") != "") : ?>
-                        <img src="../assets/img/blog/<?php echo GetData($get, "slug", "blog", "slug") ?>/<?php echo GetData($get, "titleIMG", "blog", "slug") ?>" alt="Első" style="max-width: 100%;">
+                    <p class="cikk-category"><?php echo GetData($get, "category", "ft_cikkek", "slug"); ?></p>
+                    <h1><?php echo GetData($get, "title", "ft_cikkek", "slug") ?></h1>
+                    <?php if (GetData($get, "titleIMG", "ft_cikkek", "slug") != "") : ?>
+                        <img src="../assets/img/blog/<?php echo GetData($get, "slug", "ft_cikkek", "slug") ?>/<?php echo GetData($get, "titleIMG", "ft_cikkek", "slug") ?>" alt="Első" style="max-width: 100%;">
                     <?php endif; ?>
                     <hr>
-                    <p><?php echo GetData($get, "body", "blog", "slug"); ?></p>
-                    <p class="cikkekDetails"><?php echo GetData($get, "author", "blog", "slug"); ?></p>
-                    <p class="cikkekDetails"><?php echo strftime("%G. %B %d. - %H:%M", strtotime(GetData($get, "date", "blog", "slug"))); ?></p>
+                    <p><?php echo GetData($get, "body", "ft_cikkek", "slug"); ?></p>
+                    <p class="cikkekDetails"><?php echo GetData($get, "author", "ft_cikkek", "slug"); ?></p>
+                    <p class="cikkekDetails"><?php echo strftime("%G. %B %d. - %H:%M", strtotime(GetData($get, "date", "ft_cikkek", "slug"))); ?></p>
                 </div>
                 <!--<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <h3><?php echo GetData($get, "category", "blog", "slug") . " Kategóriából" ?></h3>
+                    <h3><?php echo GetData($get, "category", "ft_cikkek", "slug") . " Kategóriából" ?></h3>
                     <?php
-                    $query = $conn->query("SELECT * FROM blog WHERE category = '" . GetData($get, "category", "blog", "slug") . "' LIMIT 3");
+                    $query = $conn->query("SELECT * FROM ft_cikkek WHERE category = '" . GetData($get, "category", "ft_cikkek", "slug") . "' LIMIT 3");
                     if ($query->num_rows > 0)
                         while ($row = $query->fetch_assoc()) :
                     ?>
@@ -67,7 +67,7 @@
 
                 <div class="cikk-bevezeto">
                     <?php
-                        $query = $conn->query("SELECT * FROM blog ORDER BY date DESC LIMIT 1");
+                        $query = $conn->query("SELECT * FROM ft_cikkek ORDER BY date DESC LIMIT 1");
                         if ($query->num_rows > 0) :
                             $row = $query->fetch_assoc()
                         ?>
@@ -84,7 +84,7 @@
                 </div>
                 <div class="cikkek-uj">
                     <?php
-                    $query = $conn->query("SELECT * FROM blog ORDER BY date DESC LIMIT 3 OFFSET 1");
+                    $query = $conn->query("SELECT * FROM ft_cikkek ORDER BY date DESC LIMIT 3 OFFSET 1");
                     if ($query->num_rows > 0) :
                         while ($row = $query->fetch_assoc()) :
                     ?>
@@ -101,7 +101,7 @@
                 </div>
                 <div class="cikkekLista">
                     <?php
-                    $query = $conn->query("SELECT * FROM blog WHERE id != 1 ORDER BY date DESC");
+                    $query = $conn->query("SELECT * FROM ft_cikkek WHERE id != 1 ORDER BY date DESC");
                     if ($query->num_rows > 0) :
                         while ($row = $query->fetch_assoc()) :
                     ?>
@@ -123,6 +123,8 @@
                     <?php endif; ?>            
                 </div>
             </div>
+
+            <?php require_once("inc/footer.php"); ?>
 
     <script src="assets/js/jquery-3.1.0.min.js"></script>
     <script src="assets/ajax/functions.js"></script>

@@ -54,6 +54,7 @@
 }
 .infoBox{
     width: 500px;
+    max-width: 100%;
     background: #fff;
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
@@ -106,6 +107,7 @@
 }
 .quizBox{
     width: 750px;
+    max-width: 100%;
     background: #fff;
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
@@ -285,6 +287,7 @@ footer button.show{
     display: flex;
     padding: 25px 30px;
     width: 450px;
+    max-width: 100%;
     align-items: center;
     flex-direction: column;
     justify-content: center;

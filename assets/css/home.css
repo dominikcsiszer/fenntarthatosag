@@ -126,7 +126,7 @@
 
     .header .header-about {
         width: 100%;
-        margin: 20rem 0 10rem 25px;
+        margin: 10rem 0 0rem 15px;
     }
     .header-about .header-aboutTop {
         max-width: 500px;
@@ -153,10 +153,19 @@
     .cikk {
         margin-bottom: 30px;
     }
-
-    .kollekcio,
-    .kollekcio:nth-child(2) {
-        display: flex;
-        flex-direction: column;
+	
+    .kollekcio, .kollekcio:nth-child(2) {
+    	justify-content: space-between;
+    	align-items: center;
+    	display: flex;
+    	flex-direction: column;
+     }
+.header {
+height: 75vh;
+}
+    .header-about {
+	font-size: .7rem;
+	margin: 25rem 0 0rem 15px;
     }
+    
 }

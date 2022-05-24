@@ -12,22 +12,22 @@ start_btn[0].onclick = ()=>{
     start.classList.add("activeStart")
     quiz_box.classList.add("activeQuiz")
     currQuiz = data.elso
-    showQuetions(0)
-    queCounter(1) 
+    kerdes(0)
+    szamlalo(1) 
 }
 start_btn[1].onclick = ()=>{
     start.classList.add("activeStart")
     quiz_box.classList.add("activeQuiz")
     currQuiz = data.masodik
-    showQuetions(0)
-    queCounter(1) 
+    kerdes(0)
+    szamlalo(1) 
 }
 start_btn[2].onclick = ()=>{
     start.classList.add("activeStart")
     quiz_box.classList.add("activeQuiz")
     currQuiz = data.harmadik
-    showQuetions(0)
-    queCounter(1) 
+    kerdes(0)
+    szamlalo(1) 
 }
 
 let que_count = 0
@@ -45,8 +45,8 @@ restart_quiz.onclick = ()=>{
     que_count = 0
     que_numb = 1
     userScore = 0
-    showQuetions(que_count)
-    queCounter(que_numb)
+    kerdes(que_count)
+    szamlalo(que_numb)
     next_btn.classList.remove("show")
 }
 
@@ -63,11 +63,11 @@ next_btn.onclick = ()=>{
     if(que_count < currQuiz.length - 1){ 
         que_count++
         que_numb++
-        showQuetions(que_count)
-        queCounter(que_numb)
+        kerdes(que_count)
+        szamlalo(que_numb)
         next_btn.classList.remove("show")
     }else{
-        showResult()
+        eredmeny()
     }
 }
 
@@ -79,7 +79,7 @@ function fetchData(file, que_count) {
 fetchData(file, que_count)
 
 // TODO: Random jöjjenek a kérdések és random legyen a sorrend
-function showQuetions(index){
+function kerdes(index){
     const que_text = document.querySelector(".que_text")
     
     let que_tag = '<span>' + currQuiz[index].kerdes +'</span>'
@@ -101,7 +101,7 @@ function showQuetions(index){
 
     
     for(i=0; i < option.length; i++){
-        option[i].setAttribute("onclick", "optionSelected(this, "+que_count+")")
+        option[i].setAttribute("onclick", "valaszSelect(this, "+que_count+")")
     }
 }
 
@@ -109,7 +109,7 @@ let tickIconTag = '<div class="icon tick"><i class="bx bx-plus"></i></div>'
 let crossIconTag = '<div class="icon cross"><i class="bx bx-minus"></i></div>'
 
 
-function optionSelected(answer, index){
+function valaszSelect(answer, index){
     let userAns = answer.textContent
     let correcAns = currQuiz[index].helyes
     const allOptions = option_list.children.length 
@@ -136,7 +136,7 @@ function optionSelected(answer, index){
 }
 
 // TODO: SQL-be mentse az eddigi adott válaszokat és átlag alapján értékeljen is
-function showResult(){
+function eredmeny(){
     quiz_box.classList.remove("activeQuiz")
     result_box.classList.add("activeResult")
     const scoreText = result_box.querySelector(".score_text")
@@ -155,7 +155,7 @@ function showResult(){
     }
 }
 
-function queCounter(index){
+function szamlalo(index){
     let totalQueCounTag = '<span><p>'+ index +'</p> / <p>'+ currQuiz.length +'</p> kérdés</span>'
     bottom_ques_counter.innerHTML = totalQueCounTag
 }

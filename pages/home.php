@@ -15,7 +15,7 @@
 </head>
 <body>
     <?php require_once("inc/nav.php"); ?>
-    <section class="section header">
+     <section class="section header">
         <div class="header-about">
             <div class="header-aboutTop">
                 <p>A Fenntarthatósági Témahét 2022. április 25. és 29. között kerül megrendezésre, amelyet Emberi Erőforrások Minisztériuma hirdet. Minden hazai és határon túli nevelési-oktatási intézmény  csatlakozhat idén a mi iskolánk is újra belevágott.</p>
@@ -33,14 +33,13 @@
             </div>
         </div>
     </section>
-    
     <div class="container">
         <seaction class="section cikkek">
             <h1 class="section-title">Cikkek</h1>
             <p class="section-titleDetails">Nézd meg a legújabb cikkjeinket</p>
             <div class="cikkek-osszes">
                 <?php
-                $query = $conn->query("SELECT * FROM blog ORDER BY date DESC LIMIT 3");
+                $query = $conn->query("SELECT * FROM ft_cikkek ORDER BY date DESC LIMIT 3");
                 if ($query->num_rows > 0) :
                     while ($row = $query->fetch_assoc()) :
                 ?>
@@ -114,6 +113,8 @@
             </div>
         </section>
     </div>
+
+    <?php require_once("inc/footer.php"); ?>
 
     <script src="assets/js/jquery-3.1.0.min.js"></script>
     <script src="assets/ajax/functions.js"></script>

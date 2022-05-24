@@ -85,22 +85,56 @@ a {
     color: #555;
 }
 
+/* FOOTER */
+.footer {
+    margin-top: 2rem;
+    width: 100%;
+    padding: 0;
+}
+.footerTop {
+    background-color: rgb(235, 235, 235);
+    padding: 10px 20px;
+}
+.footerTop .footerLinks {
+    display: flex;
+    align-items: center;
+    gap: 8rem;
+}
+.footerLinks .footerLinksRow {
+    display: flex;
+    flex-direction: column;
+}
+.footerLinksRow a {
+    text-decoration: none;
+    color: rgb(99, 99, 99);
+}
+.footerLinksRow a:hover {
+    color: rgb(0, 0, 0);
+}
+.footerBottom {
+    background-color: rgb(220, 220, 220);
+    padding: 5px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 @media screen and (max-width: 1200px) {
     .container {
-        max-width: 768px;
+        max-width: 70%px;
     }
 
 }
 
 @media screen and (max-width: 768px) {
     .container {
-        max-width: 80%;
+        max-width: 880px;
     }
     .nav .logo {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     .nav-active .logo {
-        font-size: 1rem;
+        font-size: .8rem;
     }
     .nav-right {
         width: 60%;
@@ -127,7 +161,7 @@ a {
         padding: 0;
     }
     .nav-item a {
-        padding: 1.5rem;
+        padding: 1.2rem;
         display: block;
         height: 100%;
         width: 100%;
@@ -137,5 +171,7 @@ a {
     }
     .toggleBtn {
         display: block;
+	color: #111;
+	font-size: 2rem;
     }
 }
